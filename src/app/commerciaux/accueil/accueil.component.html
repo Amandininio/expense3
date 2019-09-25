@@ -1,3 +1,10 @@
 <app-navbar>
-</app-navbar>
-<p>accueil commerciaux works!</p>
+    </app-navbar>
+    <div *ngFor="let mission of missions">
+            {{ mission.nom }}
+            {{ mission.statut }}
+            <div *ngFor="let facture of mission.factures">
+                    {{facture.montant}}
+            </div>
+    </div>
+

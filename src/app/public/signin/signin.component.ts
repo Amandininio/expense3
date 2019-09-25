@@ -33,8 +33,8 @@ export class SigninComponent implements OnInit {
 
   initForm() {
     this.signInForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
+      email: ['patoune@gmail.fr', [Validators.required, Validators.email]],
+      password: ['patoche', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
     });
   }
 
@@ -46,8 +46,6 @@ export class SigninComponent implements OnInit {
 
     this.authService.signInUser(this.infoAuth);
     this.errorMessage = this.authService.errorMessage;
-    // .then(
-    //  res => this.errorMessage = this.authService.errorMessage);
 
   }
 

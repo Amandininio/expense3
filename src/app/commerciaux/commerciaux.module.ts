@@ -25,6 +25,7 @@ export const routesCommerciaux: Routes = [
   ],
   imports: [
     RouterModule.forChild(routesCommerciaux),
+    CommonModule
   ]
 })
 export class CommerciauxModule { }

@@ -19,18 +19,9 @@ export class ApiService {
 
   signinUser(infoAuth: Authentification): Observable<any> {
     // const request = this.httpClient.get(`${this.PHP_API_SERVER}/api/connect.php?email=${email}`);
-    return this.httpClient.post(`${this.PHP_API_SERVER}/api/read.php`,
-      infoAuth
+    return this.httpClient.post(`${this.PHP_API_SERVER}/api/connect.php`, infoAuth
     );
   }
-  // @XXX change any for User
-  readUser(): Observable<any> {
-    return this.httpClient.get<any[]>(`${this.PHP_API_SERVER}/exempleRead.php`);
-    // return this.httpClient.get<any[]>(`${this.PHP_API_SERVER}/api/read.php`);
-
-  }
-
-
   // @XXX change any for User
   createUser(user: User): Observable<User> {
     return this.httpClient.post<User>(`${this.PHP_API_SERVER}/api/create.php`, user);
@@ -44,5 +35,9 @@ export class ApiService {
   // @XXX change any for User
   deleteUser(id: number) {
     return this.httpClient.delete<any>(`${this.PHP_API_SERVER}/api/delete.php/?id=${id}`);
+  }
+
+  getMissionsCommercial(userId: number): Observable<any> {
+    return this.httpClient.get(`${this.PHP_API_SERVER}/api/readMissionsCommercial.php?id=${userId}`);
   }
 }
